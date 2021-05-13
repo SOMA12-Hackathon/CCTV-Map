@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>👀 CCTV 안전지대 지도</title>
+        <style>
+            input {
+                all: unset;
+            }
+            body{
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id="container">
+            <form class="search-form" action="">
+                <div class="search-wrap">
+                    <div class="search-title">CCTV 안전지대 지도</div>
+                    <input class="search-input" placeholder="주소를 입력해 주세요 ex) 서울시 독막로 19길 30, 상수동 64-1" type="text">
+                    <input type="submit" value="검색" class="search-button">
+                </div>
+            </form>
+            <div class="map-wrap">
+                <div id="map"></div>
+                <script
+                    type="text/javascript"
+                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1b547a1b7a6c3bb23f581576407cc857&libraries=services,clusterer,drawing"
+                ></script>
+                <script src=cctv.js></script>
+                <script src=index.js></script>
+            </div>
+        </div>
+    </body>
+</html>

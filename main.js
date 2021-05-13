@@ -6,16 +6,19 @@ const cors = require("cors");
 const api = require("./routes/api");
 
 const app = express();
-
+app.set("view engine", "ejs");
+app.engine("html", require("ejs").renderFile);
 app.use(logger("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors("*"));
+app.use(express.static(__dirname + "/public"));
 // app.use("/", index);
 app.use("/api", api);
 
 app.get("/", (req, res, err) => {
-	res.status(200).sendFile(__dirname+"/views/test.html");
+	// res.status(200).sendFile(__dirname+"/views/index.html");
+	res.render("index.html");
 });
 
 app.listen(3000, () => {
